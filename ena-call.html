@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Ended</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            height: 100vh;
+            background-color: #161616;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .call {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 80%;
+        }
+        img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+        .info {
+            height: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .minu {
+            width: 300px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .recall i , .close i {
+            width: 50px;
+            height: 50px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .recall i {
+            background-color: green;
+        }
+        .close i {
+            background-color: #303030;
+        }
+        i:hover {
+            cursor: pointer;
+        }
+        .recall , .close {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+        }
+        .recall p, .close p {
+            text-transform: capitalize;
+            color: gray;
+        }
+        h3 {
+            font-weight: normal;
+        }
+        @media (max-width:767px) {
+            img {
+                width: 100px;
+                height: 100px;
+            }
+            .info {
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="call">
+        <section class="info">
+            <img src="./images/photo.png" alt="">
+            <h2>Meow Meow</h2>
+            <h3>Call Ended</h3>
+            <p>00:37</p>
+        </section>
+
+        <section class="minu">
+            <div class="recall">
+                <a href="index.html" style="all: unset;">
+                    <i tabindex="0" class="fas fa-phone"></i>
+                </a>
+                <p>Call again</p>
+            </div>
+
+            <div class="close">
+                <i tabindex="0" class="fas fa-xmark"></i>
+                <p>close</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

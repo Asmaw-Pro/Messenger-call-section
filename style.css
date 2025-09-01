@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    /* outline: 1px solid; */
+}
+
+ul {
+    display: flex;
+}
+
+span {
+    border-radius: 50%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #100000;
+    font-family: sans-serif;
+}
+
+main {
+    height: 90%;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url("./images/backgrounnd.png");
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+h2, p {
+    color: #fff;
+}
+
+section.right {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+section.left {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.info {
+    margin-top: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.fa-hand-paper {
+    transform: scaleX(-1);
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.bottom-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5em;
+}
+
+i {
+    font-size: 25px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+header i {
+    color: #fff;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+header i:hover {
+    background-color: #12121275;
+}
+
+header .left span {
+    position: relative; 
+    display: inline-block;
+}
+
+header .left span:hover i {
+    background-color: #48474775;
+}
+
+header .left span::after {
+    background-color: #2c2c2c;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: -3em;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+header .left span:hover::after {
+    opacity: 1;
+}
+
+header .left span::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-bottom-color: #2c2c2c;
+    opacity: 0;
+}
+
+header .left span:hover::before {
+    opacity: 1;
+}
+
+header .left span:has(i.fa-ellipsis-h):hover::after {
+    content: "More options";
+}
+
+header .left span:has(i.fa-gamepad):hover::after {
+    content: "Play game";
+}
+
+header .left span:has(i.fa-hand-paper):hover::after {
+    content: "Raise hand";
+}
+
+.bottom-menu i:hover {
+    color: #fff;
+}
+
+.bottom-menu li i {
+    padding: 10px;
+    color: #ccc;
+    background-color: #333;
+}
+
+.bottom-menu i.fa-phone-slash {
+    color: #fff;
+    background-color: #ff0000;
+}
+
+.bottom-menu i.fa-phone-slash:hover {
+    background-color: #ff3939;
+}
+
+i.fa-phone-slash:active {
+    background-color: #5e0000;
+}
+
+.smallphoto {
+    height: 80px;
+    width: 80px;
+    margin-left: 10px;
+    border-radius: 50%;
+    filter: brightness(0.4);
+}
+
+.smallphoto:hover {
+    filter: brightness(0.6);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-info p, .user-info h2 {
+    padding: 10px;
+}
+
+nav i:active {
+    background-color: #3d3d3d;
+}
+
+.bottom-menu .toggle {
+    display: none;
+}
+
+.bottom-menu li label {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.bottom-menu li label i.on {
+    display: inline-block;
+}
+
+.bottom-menu li label i.off {
+    display: none;
+}
+
+.bottom-menu .toggle:checked + label i.on {
+    display: none;
+}
+
+.bottom-menu .toggle:checked + label i.off {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+.bottom-menu li {
+    position: relative;
+}
+
+.bottom-menu li::after {
+    background-color: #2c2c2c;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    position: absolute;
+    top: -3em;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.bottom-menu li:hover::after {
+    opacity: 1;
+}
+
+.bottom-menu li::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-top-color: #2c2c2c;
+    opacity: 0;
+}
+
+.bottom-menu li:hover::before {
+    opacity: 1;
+}
+
+i::before {
+    position: relative;
+    top: 2px;
+}
+
+.bottom-menu li:has(i.fa-phone-slash):hover::after {
+    content: "End call";
+}
+
+.bottom-menu li:has(.toggle:not(:checked) + label i.fa-microphone):hover::after {
+    content: "Mute microphone";
+}
+.bottom-menu li:has(.toggle:checked + label i.fa-microphone-slash):hover::after {
+    content: "Unmute microphone";
+}
+
+.bottom-menu li:has(.toggle:not(:checked) + label i.fa-video):hover::after {
+    content: "Turn on camera";
+}
+.bottom-menu li:has(.toggle:checked + label i.fa-video-slash):hover::after {
+    content: "Turn off camera";
+}
+
+.bottom-menu li:has(.toggle:not(:checked) + label i.fa-user-plus):hover::after {
+    content: "View call participants";
+}
+.bottom-menu li:has(.toggle:checked + label i.fa-user-plus):hover::after {
+    content: "Hide participants";
+}
+
+.bottom-menu li:has(.toggle:not(:checked) + label i.fa-desktop):hover::after {
+    content: "Share your screen";
+}
+.bottom-menu li:has(.toggle:checked + label i.fa-desktop):hover::after {
+    content: "Stop sharing";
+}
+
+@media (max-width:991px) {
+    i {
+        padding: 6px;
+        font-size: 20px;
+    }
+    i::before {
+        top: 4px;
+    }
+}
+@media (max-width:767px) {
+    .bottom-menu li:last-child ,
+    .bottom-menu li:nth-last-child(2),
+    header span:last-child  {
+        display: none;
+    }
+    header section.right {
+        visibility: hidden;
+    }
+    img.photo {
+        width: 100px;
+        height: 100px;
+    }
+}
